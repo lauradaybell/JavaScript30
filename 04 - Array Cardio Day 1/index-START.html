@@ -7,10 +7,7 @@
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
-    // Get your shorts on - this is an array workout!
-    // ## Array Cardio Day 1
 
-    // Some data we can work with
 
     const inventors = [
       { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
@@ -59,11 +56,25 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+      const alpha = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(', ')
+        const [bLast, bFirst] = nextOne.split(', ')
+        return aLast > bLast ? 1 : -1
+        
+      })
+      console.log(alpha)
     
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    const transportation = data.reduce((obj, item) => {
+      !obj[item] ? obj[item] = 0 : null 
+      obj[item]++
+      return obj
+    }, {})
+    console.log(transportation)
 
   </script>
 </body>
